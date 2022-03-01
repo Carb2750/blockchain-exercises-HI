@@ -18,7 +18,7 @@ contract Exercise1 is ERC721 {
     }
 
     function mintNFT(address to) public {
-        require(whitelist[to] == true, "You're not on the whitelist");
+        require(whitelist[msg.sender] == true, "You're not on the whitelist");
         _mint(to, 0);
     }
 }
